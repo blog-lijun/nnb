@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index/index",
+    "pages/mine/index/index",
+    "pages/index/detail/detail",
+    "pages/index/two/two",
+    "pages/account/index/index",
+    "pages/Login/login/login",
+    "pages/view/index/index",
+    "pages/Login/reset/reset",
+    "pages/Login/code/code",
+    "pages/Login/register/register",
+    "pages/Login/user/user",
+    "pages/account/show/show"
+  ],
+  "window": {
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "牛牛帮老板端",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#111111",
+    "selectedColor": "lightgreen",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index/index",
+        "text": "首页",
+        "iconPath": "pages/images/home.png",
+        "selectedIconPath": "pages/images/home.png"
+      },
+      {
+        "pagePath": "pages/account/index/index",
+        "text": "查账",
+        "iconPath": "pages/images/3.png",
+        "selectedIconPath": "pages/images/3.png"
+      },
+
+      {
+        "pagePath": "pages/mine/index/index",
+        "text": "我的",
+        "iconPath": "pages/images/5.png",
+        "selectedIconPath": "pages/images/5.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "kbone": true,
+    "weui": true
+  }
+}

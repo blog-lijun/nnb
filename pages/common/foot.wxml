@@ -1,0 +1,5 @@
+<template name="foot">
+  <view class="foot" style='position:fixed;left:0;right:0;bottom:0;'>
+    <view style="text-align:center;font-size:14px;color:#aaa">@牛牛帮 祝您开心每一天</view>
+  </view>
+</template>

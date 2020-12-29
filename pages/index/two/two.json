@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "企业服务",
+  "usingComponents": {
+    "mp-vtabs": "../../components/vtabs/index",
+    "mp-vtabs-content": "../../components/vtabs-content/index"
+  }
+}

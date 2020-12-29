@@ -1,0 +1,2 @@
+<!--pages/account/show/show.wxml-->
+<web-view src="https://lijun.phplijun.cn/api/xcx/showAccount?id={{ id }}"></web-view>

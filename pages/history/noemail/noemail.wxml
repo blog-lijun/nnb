@@ -1,0 +1,62 @@
+<!--pages/noeamil/noemail.wxml-->
+<import src="../common/foot.wxml" />
+
+<view class="v_head" bindtouchstart="touchStart" bindtouchend="touchEnd">   
+<view class="container">
+ 
+  <view class="section" style="width:100%;height:120rpx;">
+    <view class="flex-wrp" style="flex-direction:row;font-size:14px;">
+  
+      <view bindtap="skipmail" class="flex-item bc_green" style='float:left;margin-left:115rpx;'>已完成任务({{number}})</view>
+  
+     
+    <navigator url="/pages/noemail/noemail" hover-class="navigator-hover" > 
+       <view class="flex-item bc_red" style='float:right;margin-right:115rpx;border-bottom:1px solid;'>未完成任务({{number1}})</view>
+    </navigator>
+    </view>
+  </view> 
+
+
+  <view class="page-body">
+    <form>
+      <view class="page-section">
+       
+        <view  class="weui-cells weui-cells_after-title" style="float:left;">
+
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd weui-cell__hd-title" style="flex-direction:row;">
+              <view class="weui-label" style="width:90rpx;">筛选：</view>
+            </view>
+            <view class="weui-cell__hd" style="flex-direction:row;">
+              <input type="text" placeholder="企业名称/任务类型" bindblur="upSearch" style="width:350rpx;border:1px solid #ddd;"></input>
+            </view>
+            <view class="weui-cell__hd" style="flex-direction:row;">
+              <icon type="search" size="20" bindtap="getTasksBySearch"></icon>
+            </view>
+          </view>
+
+          <view wx:for="{{tasks}}" wx:key="index"  class="weui-cell weui-cell_input">
+            <navigator
+            class="weui-cell weui-cell_input"
+            url="/pages/detail/detail?taskid={{item.id}}&type=3"
+            hover-class="navigator-hover"
+            target="self"
+            >
+              <view class="weui-cell__hd" style="flex-direction:row;">
+                <icon type="clear" size="20" style="float:left;" />
+              </view>
+             <view class="weui-cell__hd" style="flex-direction:row;">
+                <view class="weui-label" style="width:500rpx;">{{item.customer_names}} | {{item.task_small_id_name}} | {{item.confirm_execution_time}} | {{ item.user_name}}</view>
+              </view>
+            </navigator>
+          </view>
+
+
+        </view>
+      </view>
+    </form>
+  </view>
+</view>
+
+<!--<template is="foot" />-->
+</view>

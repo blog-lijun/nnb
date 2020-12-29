@@ -1,0 +1,113 @@
+<!--pages/view/index/index.wxml-->
+
+<view class="container">
+  <view class="page-body">
+
+    <!-- 搜索框  -->
+    <view class="search">
+       <icon class="icon-small" type="search" size="14"></icon>
+       <input  class="weui-input" auto-focus placeholder="搜索" />
+    </view>
+   
+    <!-- 轮播图 -->
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+     <!-- 推荐项目 -->
+   <view class="flex-wrp buttom-line" style="flex-direction:row;">
+      <view class="flex-item">
+        <view class="fl-margin">推荐项目</view>
+      </view>
+      <view class="weui-cell__bd">
+        <text class="fr-margin">我要发布</text>
+      </view>
+    </view>
+
+    <!--  tabs切换 -->
+    <mp-tabs 
+      tabs="{{tabs}}" 
+      activeTab="{{activeTab}}" 
+      swiperClass="weui-tabs-swiper"
+      bindtabclick="onTabCLick"
+      bindchange="onChange"
+      activeClass="tab-bar-title__selected"
+    >
+      <block wx:for="{{tabs}}" wx:key="title">
+        <view class="tab-content" slot="tab-content-{{index}}" > 
+       <!-- {{item.title}}  --> 
+
+       <scroll-view scroll-y="true" style="height: 666rpx;">
+          <view class="scroll-y" >
+            <view class="weui-panel weui-panel_access">
+            <!--<view class="weui-panel__hd">图文组合列表</view>-->
+            <view class="weui-panel__bd">
+                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="../../images/info.png" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">2020年，税务局将从这7个方面严查企业！老板及时自查！</view>
+                        <view class="weui-media-box__desc">2020-08-20</view>
+                    </view>
+                </navigator>
+
+                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="../../images/info.png" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">标题二</view>
+                        <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
+                    </view>
+                </navigator>
+
+                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="../../images/info.png" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">标题三</view>
+                        <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
+                    </view>
+                </navigator>
+                
+                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="../../images/info.png" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">标题四</view>
+                        <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
+                    </view>
+                </navigator>
+
+                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="../../images/info.png" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">2020年，税务局将从这7个方面严查企业！老板及时自查！</view>
+                        <view class="weui-media-box__desc">2020-08-20</view>
+                    </view>
+                </navigator>
+
+
+            </view>
+            </view>
+          </view>
+          </scroll-view>
+        </view>
+      </block>
+    </mp-tabs>
+
+</view> 
+</view>
+

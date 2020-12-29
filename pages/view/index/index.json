@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "发现",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "mp-tabs": "../../components/tabs/index"
+  }
+}

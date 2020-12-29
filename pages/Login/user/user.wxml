@@ -1,0 +1,55 @@
+<!--pages/Login/user/user.wxml-->
+<view class="page-section img-imput" style="border:0;    margin-top: 50px;">
+  <text class="logo_text">请设置姓名密码</text>
+</view>
+<view class="page-section img-imput" style="border:0;margin-bottom: 60rpx;">
+  <text class="logo_detail">牛牛帮 用专业让创业更省心</text>
+</view>
+
+<view class="page-section">
+    <view class="img-imput">
+      <view class="weui-cell weui-cell_input"> 
+        <input type="text" class="weui-input" model:value="{{ name }}"  minlength="2"   bindinput="bindKeyInput" placeholder="请输入用户名"/>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-section" style=" margin: 0;">
+    <view class="img-imput">
+      <view class="weui-cell weui-cell_input" style="justify-content:space-between;"> 
+        <input type="text" password class="weui-input" model:value="{{ password }}"   maxlength="11" bindinput="bindKeyInput" placeholder="请输入密码"/>
+      </view>
+    </view>
+  </view>
+<!-- 
+  <view class="page-section" style="    margin: 0;">
+      <view class="weui-cell weui-cell_input" style="justify-content:flex-end;font-size:25rpx;"> 
+         已有账号<view  id="tapTest" data-hi="Weixin" bindtap="goto" style="color:blue;">直接登录</view>
+      </view>
+  </view>
+-->
+<!-- 
+<view class="page-section">
+    <view class="img-imput">
+      <view class="weui-cell weui-cell_input"> 
+        <image class="little_image" src="/pages/images/phone.png" />
+        <input class="weui-input"  maxlength="10" bindinput="bindKeyInput" placeholder="请输入电话"/>
+        <button class="code">获取验证码</button>
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="img-imput">
+      <view class="weui-cell weui-cell_input">
+        <image class="little_image" src="/pages/images/pass.png" />
+       <input class="weui-input"  maxlength="10" bindinput="bindKeyInput" placeholder="请输入验证码"/>
+      </view>
+    </view>
+  </view>
+  -->
+<!-- 登录 -->
+  <view>
+    <view class="img-imput" style="border:0;height:160rpx;">
+        <button class="logo_btn" model:disabled="{{!name}}" bindtap="register">完成</button>
+    </view>
+  </view>

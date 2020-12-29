@@ -1,0 +1,60 @@
+<!--pages/Login/login/login.wxml-->
+<image  class="logo" src='/pages/images/logo.png'  />
+
+<view class="page-section img-imput" style="border:0;">
+  <text class="logo_text">登录</text>
+</view>
+<view class="page-section img-imput" style="border:0;margin-bottom: 60rpx;">
+  <text class="logo_detail">牛牛帮  用专业让创业更简单</text>
+</view>
+
+<view class="page-section">
+    <view class="img-imput">
+      <view class="weui-cell weui-cell_input"> 
+        <input type="number" class="weui-input" model:value="{{ phone }}"  maxlength="11" bindinput="bindKeyInput" placeholder="请输入手机号码"/>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-section" style=" margin: 0;">
+    <view class="img-imput">
+      <view class="weui-cell weui-cell_input"> 
+        <input class="weui-input" password  model:value="{{password}}" bindinput="bindKeyInput" placeholder="请输入密码"/>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-section" style="    margin: 0;">
+      <view class="weui-cell weui-cell_input" style="justify-content:flex-end;font-size:25rpx;"> 
+         还没有账号？<navigator url="/pages/Login/register/register?type=1" style="color:blue;">免费注册</navigator>
+      </view>
+  </view>
+<!-- 
+<view class="page-section">
+    <view class="img-imput">
+      <view class="weui-cell weui-cell_input"> 
+        <image class="little_image" src="/pages/images/phone.png" />
+        <input class="weui-input"  maxlength="10" bindinput="bindKeyInput" placeholder="请输入电话"/>
+        <button class="code">获取验证码</button>
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="img-imput">
+      <view class="weui-cell weui-cell_input">
+        <image class="little_image" src="/pages/images/pass.png" />
+       <input class="weui-input"  maxlength="10" bindinput="bindKeyInput" placeholder="请输入验证码"/>
+      </view>
+    </view>
+  </view>
+  -->
+<!-- 登录 -->
+  <view>
+    <view class="img-imput" style="border:0;height:160rpx;">
+        <button class="logo_btn" model:disabled="{{!phone}}"  bindtap="login">登录</button>
+    </view>
+  </view>
+  <view class="img-imput " style="justify-content: space-between;font-size:25rpx;padding:20rpx;">
+    <navigator url="/pages/Login/register/register?type=2">忘记密码</navigator> 
+    <navigator url="/pages/Login/code/code" style="color:blue;">验证码登录</navigator>
+  </view>

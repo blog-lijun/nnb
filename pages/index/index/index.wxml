@@ -1,0 +1,98 @@
+
+<view class="container">
+  <view class="page-body">
+    <view class="page-section page-section-spacing swiper" style="margin-bottom:0rpx;">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}">
+              <image src="{{ item.pic }}" mode="aspectFit"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!-- 最牛服务 -->
+   <view class="flex-wrp buttom-line" style="flex-direction:row;">
+      <view class="flex-item">
+        <view class="fl-margin">热门服务</view>
+      </view>
+      <view class="weui-cell__bd">
+        <navigator url="/pages/index/two/two">
+           <text class="fr-margin">更多 ></text>
+        </navigator>
+      </view>
+    </view>
+    <!-- 最牛服务detail -->
+   <view class="section">
+      <view wx:key="this" wx:for="{{ hots }}" wx:for-key="k1"  wx:for-item="x"  class="flex-wrp" style="flex-direction:row;">
+        <view wx:key="this" wx:for="{{ x }}" wx:for-key="k2"   wx:for-item="y"  class="flex-item bc_green">
+          <navigator url="/pages/index/detail/detail?id={{y.id}}">
+            <view class="flex-wrp" style="flex-direction:column;align-items:center;">
+              <view class="flex-item">
+                <image style="width: 80rpx; height: 75rpx;margin-top:40rpx" mode="scaleToFill" src="{{ y.hot_img }}"></image>
+              </view>
+              <view class="flex-item">
+                <text>{{ y.name }}</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+
+     <!-- 财税学堂 -->
+   <view class="flex-wrp buttom-line" style="flex-direction:row;background:#eeeeee;">
+
+    <view class="csxt">
+        <view class="flex-item">
+          <view class="fl-margin">财税学堂</view>
+        </view>
+        <view class="weui-cell__bd">
+          <text class="fr-margin"></text>
+        </view>
+    </view>
+      
+    </view>
+
+    <!--  tabs切换 -->
+    <mp-tabs 
+      tabs="{{tabs}}" 
+      activeTab="{{activeTab}}" 
+      swiperClass="weui-tabs-swiper"
+      bindtabclick="onTabCLick"
+      bindchange="onChange"
+      activeClass="tab-bar-title__selected"
+    >
+      <block wx:for="{{tabs}}" wx:key="title">
+        <view class="tab-content" slot="tab-content-{{index}}" > 
+       <!-- {{item.title}}  --> 
+
+       <scroll-view scroll-y="true" style="height: 666rpx;">
+          <view class="scroll-y" >
+            <view class="weui-panel weui-panel_access">
+            <!--<view class="weui-panel__hd">图文组合列表</view>-->
+            <view class="weui-panel__bd">
+              
+                <navigator wx:key="this" wx:for="{{ item.data }}" wx:for-item="x" url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" url="/pages/index/info/info?id={{ x.id }}">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="{{ x.pic }}" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">{{ x.name}}</view>
+                        <view class="weui-media-box__desc">{{ x.created_at }}</view>
+                    </view>
+                </navigator>
+
+            </view>
+            </view>
+          </view>
+          </scroll-view>
+        </view>
+      </block>
+    </mp-tabs> 
+
+</view> 
+</view>

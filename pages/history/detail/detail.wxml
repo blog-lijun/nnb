@@ -1,0 +1,295 @@
+<!--pages/detail/detail.wxml-->
+<form>
+    <view class="page-section">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">任务编号:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.field_number }}
+          </view>
+        </view>
+
+      <view class="weui-cell weui-cell_input detail">
+          <view class="weui-cell__hd">
+            <view class="weui-label">企业名称:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.customer_names }}
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">任务大类:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.task_big_id_name }}
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">任务种类:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.task_small_id_name }}
+          </view>
+        </view>
+
+         <view wx:if="{{task.change_time}}" class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">变更执行时间：</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.change_time?task.change_time:'' }}
+          </view>
+        </view>
+
+        <view wx:if="{{task.change_address}}" class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">变更执行地点：</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.change_address?task.change_address:'' }}
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">时间要求:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.is_execution_time == 1?'是':'否' }}
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">任务执行时间:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.execution_time }}
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">是否收款:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.is_money == 1?'是':'否' }}
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input" >
+            <view class="weui-cell__hd">
+              <view class="weui-label">客户到场:</view>
+            </view>
+           <view  style="">
+              <view wx:if="{{task.is_corporate == 1}}" class="weui-cell__bd weui-content">
+              无需到场</view>
+             
+              <view wx:if="{{task.is_corporate == 2}}" class="">
+                负责人{{ task.corporate_info.fz_name?task.corporate_info.fz_name:''}}：
+                  <view class="phone" bindtap="telphone" data-phone="{{ task.corporate_info.fz_phone }}">
+                    {{task.corporate_info.fz_phone?task.corporate_info.fz_phone:''}}
+                  </view>
+              </view>
+              <view wx:if="{{task.is_corporate == 3}}">
+                法人 {{ task.corporate_info.fr_name?task.corporate_info.fr_name:''}}：
+                  <view class="phone" bindtap="telphone" data-phone="{{ task.corporate_info.fr_phone}}"> 
+                    {{task.corporate_info.fr_phone?task.corporate_info.fr_phone:''}}
+                  </view>
+              </view>
+              <view wx:if="{{task.is_corporate == 4}}">
+                    负责人{{ task.corporate_info.fz_name?task.corporate_info.fz_name:''}}：
+                  <view class="phone" bindtap="telphone" data-phone="{{ task.corporate_info.fz_phone }}">
+                    {{task.corporate_info.fz_phone?task.corporate_info.fz_phone:''}}
+                  </view>
+                      法人 {{ task.corporate_info.fr_name?task.corporate_info.fr_name:''}}：
+                    <view class="phone" bindtap="telphone" data-phone="{{ task.corporate_info.fr_phone }}"> 
+                      {{task.corporate_info.fr_phone?task.corporate_info.fr_phone:''}}
+                    </view>
+              </view>
+             
+          </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">资料提供:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            <text>{{ task.data_setting_id?task.data_setting_id:'' }}</text>
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">是否加急:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.is_expedited == 1?'是':'否' }}
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">任务区域:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.field_address_id_name }}
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input region">
+          <view class="weui-cell__hd">
+            <view class="weui-label">任务地点:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.address_name?task.address_name:'' }}
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input region">
+          <view class="weui-cell__hd">
+            <view class="weui-label">详细地点:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.field_address_detail?task.field_address_detail:'' }}
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd" >
+            <view class="weui-label">任务内容:</view>
+          </view>
+          <view class="weui-cell__bd weui-content" style="padding-left:10px;">
+             <textarea style="width:450rpx;height:auto;">
+             {{task.content?task.content:''}}
+             </textarea>
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">备注:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.remark?task.remark:'' }}
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">图片:</view>
+          </view>
+          <view class="flex-item page-body-info" wx:for="{{task.img_src}}">
+          <image
+          style="width: 100px; height:100%; background-color: #eeeeee;"
+          mode="scaleToFill"
+          src="{{ item }}" bindtap="biggerImage" data-url="{{item}}"
+          ></image>
+      
+          </view>
+        </view>
+
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">需求人:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.user_id_name }}
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">需求部门:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.user_id_dept }}
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">审核备注:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.undone_remark?task.undone_remark:'' }}
+          </view>
+        </view>
+
+        <view wx:if="{{type==2}}" class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">完结时间:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.complete_time?task.complete_time:'' }}
+          </view>
+        </view>
+
+        <view  wx:if="{{type==2}}" class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+        <view class="section">
+            <view class="section__title">详情：</view>
+            <view class="flex-wrp" >
+
+              <view class="flex-item page-body-info" wx:for="{{task.imageSrc}}">
+                <image  src="{{item}}" bindtap="biggerImage" data-url="{{item}}" class="image" mode="aspectFit"></image>
+              </view>
+
+            </view>
+        </view>
+        </view>
+      </view>
+
+        <view wx:if="{{type==3}}" class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">未完成原因:</view>
+          </view>
+          <view class="weui-cell__bd weui-content">
+            {{ task.other_reason?task.other_reason:'' }}
+          </view>
+        </view>
+
+         <view  wx:if="{{type==3}}" class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+        <view class="section">
+            <view class="section__title">详情：</view>
+            <view class="flex-wrp" >
+              <view class="flex-item page-body-info" wx:for="{{task.imageSrc}}">
+                <image  src="{{item}}" bindtap="biggerImage" data-url="{{item}}" class="image" mode="aspectFit"></image>
+              </view>
+
+            </view>
+        </view>
+        </view>
+      </view>
+        
+      </view>
+    </view>
+  </form>
+  
+  <view wx:if="{{type==1}}" class="page-body" style="margin:40rpx;padding-bottom:100rpx;">
+    <view  style="width:45%;float:left;margin:0 auto;">
+    <navigator
+    url="/pages/success/success?taskid={{task.id}}"
+    hover-class="navigator-hover"
+    >
+      <button type="primary" size="mini" style='display:block;' >已完成</button>
+    </navigator>
+    
+    </view>
+    <view style="width:45%;float:left;margin-left:40rpx;">
+      <navigator
+      url="/pages/error/error?taskid={{task.id}}"
+      hover-class="navigator-hover"
+      >
+        <button type="" size="mini" style='display:block;' >未完成</button>
+      </navigator>
+    </view>
+  </view>

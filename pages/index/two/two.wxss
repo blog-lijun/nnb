@@ -1,0 +1,51 @@
+@import '../../common/common.wxss';
+
+page{
+    background-color: rgb(246,246,246);
+    height: 100%;
+}
+
+.vtabs-content-item {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+.production {
+    display: flex;
+    justify-content: space-between;
+}
+.price {
+    font-size: 25rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.price button {
+    font-size: 25rpx;
+    width: 140rpx;
+    border-radius: 177rpx;
+    border: 1rpx solid rgb(0,157,255);
+    background-color: rgb(0,157,255);
+    color: #fff;
+}
+
+.production .pname {
+    width: 50%;
+    display: grid;
+    align-items: center;
+    padding: 15rpx;
+}
+
+.priceNow {
+    color:red;
+    display: block;
+}
+
+.oldPrice {
+    color: #aaa;
+    text-decoration: line-through;
+    font-size: 21rpx;
+    display: block;
+}

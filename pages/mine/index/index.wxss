@@ -1,0 +1,16 @@
+/* pages/mine/index/index.wxss */
+
+.logout{
+  color: #ffffff;
+  background-color: orangered;
+  margin-top: 10rpx;
+}
+
+.logo_btn {
+  background: none;
+  border: 1rpx solid #ffffff;
+  width: 190rpx;
+  margin: 0;
+  font-size: 30rpx;
+  margin-left: 10rpx;
+}

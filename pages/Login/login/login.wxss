@@ -1,0 +1,52 @@
+/* pages/Login/login/login.wxss */
+@import '../../common/common.wxss';
+page {
+  text-align: center;
+  background-color: #ffffff;
+}
+.page-section{
+  margin-bottom:30rpx;
+}
+.logo {
+  width: 50%;
+  text-align: center;
+  height: 110rpx;
+  margin: 80rpx 0 60rpx 0;
+}
+.logo_text{
+  font-weight: 600;
+  font-size: 60rpx;
+  border-bottom: 25rpx solid lightblue;
+  height: 60rpx;
+}
+.logo_detail{
+  color:#dddddd;
+  font-size: 32rpx;
+}
+.little_image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.weui-cell_input{
+  width: 90%;
+  text-align: left;
+}
+.img-imput{
+  width: 90%;
+  margin: 0 auto;
+  height: 80rpx;
+  display: flex;
+}
+.code {
+  font-size: 16rpx;
+  padding: 8rpx 30rpx 8rpx 30rpx;
+  width: 145rpx;
+}
+
+.logo_btn{
+  width: 100%;
+  background-color: rgb(0, 157, 255);
+  color: #ffffff;
+  margin-top: 50rpx;
+  border-radius: 0rpx;
+}

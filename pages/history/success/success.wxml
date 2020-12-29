@@ -1,0 +1,83 @@
+<!--pages/success/success.wxml-->
+
+<view class="container">
+
+  <view class="page-body" style='width:90%;'>
+    <view class="page-section">
+    <form bindsubmit="bindFormSubmit">  
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">日期选择</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker name="date" mode="date" value="{{date}}" start="2019-02-25" end="2199-09-01" bindchange="bindDateChange">
+              <view class="weui-input">{{date}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+
+     
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">时间选择</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker name="time" mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+              <view class="weui-input">{{time}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+
+    
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">备注：</view>
+          </view>
+          <view class="weui-cell__bd">
+            <textarea class="textarea_border" name="remark"  bindblur="bindRemarkChange"></textarea>
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+        <view class="section">
+            <view class="flex-wrp" >
+              <block wx:if="{{imageSrc.length}}"> 
+                <view class="flex-item page-body-info" wx:for="{{imageSrc}}">
+                  <image  src="{{item}}" class="image" mode="aspectFit"></image>
+                </view>
+                <view class="flex-item page-body-info">
+                <image bindtap="chooseImage" src="../images/plus.png" style="width:100rpx;height:100rpx;"></image>
+                </view>
+              </block>
+              <block wx:else>
+              <view class="flex-item page-body-info">
+                <image bindtap="chooseImage" src="../images/plus.png" style="width:100rpx;height:100rpx;"></image>
+                </view>
+              </block>
+
+            </view>
+        </view>
+        </view>
+      </view>
+
+
+    <view class="page-body" style="margin:40rpx;padding-bottom:50rpx;">
+      <view  style="width:45%;float:left;margin:0 auto;">
+      <button type="primary" form-type="submit" size="mini" style='display:block;' >保存  </button>
+      </view>
+
+      <view style="width:45%;float:left;margin-left:40rpx;">
+      <button type=""  size="mini" style='display:block;' bindtap='error' >取消</button>
+      </view>
+  </view>
+  </form>    
+</view>
+</view>      
+</view>

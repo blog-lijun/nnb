@@ -1,0 +1,80 @@
+/* pages/index/detail/detail.wxss */
+page{
+  background-color: #eeeeee;
+}
+
+.production{
+  padding: 33rpx;
+  background: #fff;
+}
+.production > text {
+  font-size: 40rpx;
+  font-weight: 550;
+}
+.production .price {
+  font-size: 40rpx;
+  color: red;
+}
+
+.production .oldPrice{
+  text-decoration: line-through;
+  font-size: 25rpx;
+  color: #aaa;
+  margin-left: 20rpx;
+}
+
+.serve{
+  width: 95%;
+  margin: 0 auto;
+  background: #fff;
+  margin-top: 30rpx;
+  padding-bottom: 15rpx;
+}
+.serve .content {
+  width: 94%;
+  font-size: 13px;
+  display: flex;
+  margin: 39rpx auto;
+  color: #222;
+  background: #ffffff;
+  padding-top: 30rpx;
+}
+
+.serve .title {
+  font-size: 35rpx;
+  font-weight: 550;
+  padding: 20rpx;
+}
+
+.zixun {
+  width: 80%;
+  border: 1rpx solid #dddddd;
+  border-radius: 50rpx;
+  padding: 25rpx 0 25rpx 40rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.code {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0rpx 0 0 40rpx;
+  display: flex;
+  align-items: center;
+}
+.code input {
+  width: 50%;
+  margin-left: -40rpx;
+  padding: 25rpx 0 25rpx 40rpx;
+  text-align: left;
+  margin-top: 20rpx;
+}
+
+.jsbl {
+  width: 80%;
+  margin: 30rpx auto;
+  border-radius: 1rpx solid rgb(255,185,51);
+  background-color: rgb(255,185,51);
+  color: #fff;
+  border-radius: 150rpx;
+  margin-bottom: 80rpx;
+}

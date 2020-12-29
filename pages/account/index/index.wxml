@@ -1,0 +1,75 @@
+<!--pages/account/index/index.wxml-->
+<!--列表页-->
+<view class='container'>
+  <!--等待框-->
+  <loading hidden="{{!loading}}">加载中...</loading>
+  <!--顶部标题栏-->
+  <view class='page-header'>
+    <text class='page-title'>{{title}}</text>
+  </view>
+  <!--列表-->
+  <view class='page-body' wx:for="{{list}}" wx:key="id">
+    <!--类型判断,显示不同的数据-->
+    <block wx:if="{{type === 'us_box'}}">
+      <navigator url='../item/item?id={{item.subject.id}}'>
+        <view class='item'>
+          <!--<image class='poster' src='{{item.subject.images.small}}'></image>-->
+          <view class='meta'>
+            <text class='title'>{{item.title}}</text>
+            <!--<text class='sub-title'>{{item.subject.original_title}}({{item.subject.year}})</text>--> 
+             
+            <view class='artists'>
+              <text>{{item.name}}：</text>
+              <text  >{{item.phone}}</text>
+            </view>
+            <view class='rating'>
+              <text>{{item.subject.rating.average}}</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <!--另一种情况-->
+    <block wx:else>
+      <navigator url='../item/item?id={{ item.id }}'>
+        <view class='item'>
+          <!--<image class='poster' src='{{item.images.small}}'></image> -->
+          <view class='meta'>
+            <text class='title'>{{item.name}}</text>
+            <!--<text class='sub-title'>{{item.original_title}}({{item.year}})</text>-->
+            <view class='artists'>
+             <text>税号：</text>
+             <text  >{{ item.taxNo }}</text>
+            </view>
+            <view class='rating'>
+              <text>{{item.rating.average}}</text>
+            </view>
+          </view>
+          <text style="color:blue;" data-id="{{item.id}}" bindtap="show">查账</text>
+        </view>
+      </navigator>
+    </block>
+  </view>
+
+  <view class="img-imput" style="border:0;height:160rpx;">
+          <button wx:if="{{ loginStatus }}" class="logo_btn"  bindtap="btn">+绑定企业</button> 
+          <button wx:if="{{ !loginStatus }}" class="logo_btn"  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">+绑定企业</button> 
+   </view>
+
+</view>
+
+<!-- 遮罩层 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<!-- 弹出层 -->
+<view class="modalDlg" wx:if="{{showModal}}">
+
+    <text class="text">企业绑定</text>
+    <input type="text" model:value="{{company_name}}"  bindinput="bindKeyInput" placeholder="请输入绑定的公司名称" placeholder-style="font-size:25rpx;color:#ddd;" selection-start="2" /> 
+    <input type="number" model:value="{{bindPhone}}" maxlength="11"  bindinput="bindKeyInput" placeholder="请输入绑定的电话" placeholder-style="font-size:25rpx;color:#ddd;"  />
+   
+    <view class="btn_f" >
+      <view bindtap="bind" class="ok">确认</view>
+      <view bindtap="cancel" style="background-color:#ddd;" class="ok">取消</view>
+    </view>
+    
+</view>

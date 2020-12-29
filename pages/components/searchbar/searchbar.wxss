@@ -1,0 +1,3 @@
+@import "../weui-wxss/dist/style/weui.wxss";
+.weui-search-bar__label text{display:inline-block;font-size:12px;vertical-align:middle} 
+ 
