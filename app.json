@@ -21,8 +21,8 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#111111",
-    "selectedColor": "lightgreen",
+    "color": "#797880",
+    "selectedColor": "#5b94e8",
     "backgroundColor": "#fff",
     "position": "bottom",
     "list": [
@@ -30,20 +30,20 @@
         "pagePath": "pages/index/index/index",
         "text": "首页",
         "iconPath": "pages/images/home.png",
-        "selectedIconPath": "pages/images/home.png"
+        "selectedIconPath": "pages/images/home-active.png"
       },
       {
         "pagePath": "pages/account/index/index",
         "text": "查账",
-        "iconPath": "pages/images/3.png",
-        "selectedIconPath": "pages/images/3.png"
+        "iconPath": "pages/images/bill.png",
+        "selectedIconPath": "pages/images/bill-active.png"
       },
 
       {
         "pagePath": "pages/mine/index/index",
         "text": "我的",
-        "iconPath": "pages/images/5.png",
-        "selectedIconPath": "pages/images/5.png"
+        "iconPath": "pages/images/mine.png",
+        "selectedIconPath": "pages/images/mine-active.png"
       }
     ]
   },

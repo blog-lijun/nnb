@@ -1,5 +1,6 @@
 <!--pages/mine/index/index.wxml-->
 <view class="page">
+    <image mode="widthFix" class="mine-background" src="../../images/mine-bg.jpg"/>
     <view wx:if="{{ loginStatus }}" class="page__hd" style="padding:30rpx;">
         <view class="page__title">账户名称：{{ name }}</view>
         <view class="page__desc">手机号：{{ phone }}</view>
@@ -9,9 +10,6 @@
     </view>
     <view class="page__bd">
       <view class="weui-cells">
-          <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
-              <mp-cell value="是否绑定" footer="左滑设置"></mp-cell>
-          </mp-slideview>
       </view>
      
     </view>

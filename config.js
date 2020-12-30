@@ -2,7 +2,7 @@
  * 小程序配置文件
  */
 
-const host = 'https://lijun.phplijun.cn'
+const host = "https://lijun.phplijun.cn";
 
 const config = {
   // 下面的地址配合云端 Server 工作
@@ -10,7 +10,7 @@ const config = {
   // 账号密码登录
   login: `${host}/api/xcx/login`,
   //获取openid
-  openid:`${host}/api/xcx/openId`,
+  openid: `${host}/api/xcx/openId`,
   //获取用户手机号
   getPhoneNumber: `${host}/api/xcx/getPhoneNumber`,
   // 获取验证码
@@ -38,9 +38,7 @@ const config = {
   //产品二级分类页面;
   productions: `${host}/api/xcx/productions`,
   //获取资讯详情;
-  getZx: `${host}/api/xcx/getZx`
+  getZx: `${host}/api/xcx/getZx`,
+};
 
-  
-}
-
-module.exports = config
+module.exports = config;

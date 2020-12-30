@@ -71,7 +71,6 @@ Page({
       url: '/pages/Login/register/register',
   
     })
-    console.log('zhanshi');
   },
   login:function(){
     console.log('开始登录');

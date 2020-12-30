@@ -1,6 +1,6 @@
 /* pages/mine/index/index.wxss */
 
-.logout{
+.logout {
   color: #ffffff;
   background-color: orangered;
   margin-top: 10rpx;
@@ -13,4 +13,7 @@
   margin: 0;
   font-size: 30rpx;
   margin-left: 10rpx;
+}
+.mine-background {
+  width: 100vw;
 }
