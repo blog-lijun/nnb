@@ -22,6 +22,7 @@ Page({
     //     url: '/pages/Login/login/login',
     //   })
     // }
+
   },
   logout: function () {
     app.globalData.loginStatus = false;

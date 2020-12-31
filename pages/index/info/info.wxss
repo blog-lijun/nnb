@@ -1,9 +1,21 @@
 /* pages/index/detail/detail.wxss */
-page{
+page {
   background-color: #eeeeee;
+  height: 100%;
 }
-
-.production{
+.container {
+  padding: 20px 15px;
+  height: 100%;
+  background-color: #ffffff;
+}
+.news-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.news-time {
+  color: #aaaaaa;
+}
+.production {
   padding: 33rpx;
   background: #fff;
 }
@@ -11,19 +23,8 @@ page{
   font-size: 40rpx;
   font-weight: 550;
 }
-.production .price {
-  font-size: 40rpx;
-  color: red;
-}
 
-.production .oldPrice{
-  text-decoration: line-through;
-  font-size: 25rpx;
-  color: #aaa;
-  margin-left: 20rpx;
-}
-
-.serve{
+.serve {
   width: 95%;
   margin: 0 auto;
   background: #fff;
@@ -72,8 +73,8 @@ page{
 .jsbl {
   width: 80%;
   margin: 30rpx auto;
-  border-radius: 1rpx solid rgb(255,185,51);
-  background-color: rgb(255,185,51);
+  border-radius: 1rpx solid rgb(255, 185, 51);
+  background-color: rgb(255, 185, 51);
   color: #fff;
   border-radius: 150rpx;
   margin-bottom: 80rpx;

@@ -11,9 +11,9 @@
     </view>
   </view>
   <view wx:if="{{ loginStatus }}">
-    <view class="page__bd">
+    <!-- <view class="page__bd">
       <mp-cell title="意见反馈" hover link></mp-cell>
-    </view>
+    </view> -->
     <view>
       <button class="logout" bindtap="logout">退出登录</button>
     </view>
