@@ -17,7 +17,7 @@
     "backgroundColor": "#ffffff",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "牛牛帮老板端",
+    "navigationBarTitleText": "牛牛帮",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
