@@ -1,5 +1,27 @@
 /* pages/mine/index/index.wxss */
 
+.page-user {
+  position: relative;
+}
+.user-header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px 60px;
+}
+.mine-background {
+  width: 100vw;
+}
+.head-img {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+}
+
 .logout {
   color: #ffffff;
   background-color: orangered;
@@ -14,6 +36,6 @@
   font-size: 30rpx;
   margin-left: 10rpx;
 }
-.mine-background {
-  width: 100vw;
+.user-info {
+  color: #ffffff;
 }
