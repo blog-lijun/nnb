@@ -6,6 +6,7 @@ Page({
    */
   data: {
     id:'',
+    thirdplatformuserid:'',
   },
 
   /**
@@ -14,6 +15,7 @@ Page({
   onLoad: function (options) {
     this.setData({
       id:options.id,
+      thirdplatformuserid:options.thirdplatformuserid,
     });
   },
 
