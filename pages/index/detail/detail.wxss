@@ -5,6 +5,7 @@ page {
 .container {
   background-color: #252d8b;
   padding-bottom: 30px;
+  padding-top: 30px;
 }
 .production {
   padding-left: 21rpx;
@@ -29,7 +30,7 @@ page {
 .serve {
   width: 95%;
   margin: 0 auto;
-  background: #fff;
+  background: transparent;
   margin-top: 30rpx;
 }
 

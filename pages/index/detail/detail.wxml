@@ -1,8 +1,8 @@
 <!-- pages/index/detail/detail.wxml -->
 <view class="container">
-  <view>
+  <!-- <view>
     <image src="{{ production.pic }}" mode="widthFix" style="width:100%;" />
-  </view>
+  </view> -->
   <!-- 产品名称、价格说明 -->
   <!-- <view class="production">
     <text>{{ production.name }}</text>

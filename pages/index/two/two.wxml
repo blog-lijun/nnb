@@ -9,12 +9,12 @@
     <mp-vtabs-content tabIndex="{{index}}">
       <view >
           <!-- banner 图-->
-          <image src="{{ item.banner }}" style="width:100%;height:300rpx;" />
+          <image src="{{ item.banner }}" style="width:100%;"  mode="widthFix" />
           <!-- 工商服务产品明细 -->
           <view class="production" wx:key="this" wx:for="{{ item.data }}" wx:for-item="x" >
                <!-- 产品主图 -->
                <view style="width:50%;">
-                  <image src="{{ x.pic }}" style="width:100%;height:205rpx;" />
+                  <image src="{{ x.pic }}" style="width:100%;" mode="widthFix" />
                </view>
                <!-- 文字价格说明 -->
                <view class="pname">
