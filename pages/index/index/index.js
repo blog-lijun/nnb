@@ -56,7 +56,7 @@ Page({
       if (!err) {
         if (res.data.code == 200) {
           that.setData({
-            background: res.data.data,
+            background: res.data.data[0],
           });
         } else {
           wx.showToast({
