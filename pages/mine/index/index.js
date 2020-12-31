@@ -10,6 +10,7 @@ Page({
     loginStatus: false,
     name: "",
     phone: "",
+    head: "",
   },
 
   /**
@@ -35,7 +36,6 @@ Page({
   getPhoneNumber(e) {
     var that = this;
     //console.log(e.detail.errMsg)
-    console.log(app.globalData);
     //如果检测到用户没有登录的时候才走这个授权接口; 然后刷新当前页面； 下次点击不出现授权按钮;
     if (e.detail.errMsg == "getPhoneNumber:ok") {
       //用户同意授权
@@ -109,6 +109,83 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
+  getUserInfo(e) {
+    let that = this;
+    wx.getUserInfo({
+      success: function (res) {
+        app.globalData.name = res.userInfo.nickName;
+        app.globalData.head = res.userInfo.avatarUrl;
+
+        console.log(res);
+        wx.checkSession({
+          success() {
+            //session_key 未过期，并且在本生命周期一直有效
+            app.Q(
+              config.getPhoneNumber,
+              "post",
+              { encryptedData: e.detail.encryptedData, iv: e.detail.iv, session_key: app.globalData.session_key, openid: app.globalData.openid, p_id: app.globalData.p_id },
+              function (err, res) {
+                if (!err) {
+                  if (res.data.code == 200) {
+                    wx.setStorageSync("P_id", res.data.user.id);
+                    //更新登录状态
+                    app.globalData.loginStatus = true;
+                    app.globalData.phone = res.data.user.phone;
+                    that.onLoad();
+                    that.onShow();
+                  } else {
+                    wx.showToast({
+                      title: res.data.msg,
+                      icon: "none",
+                    });
+                  }
+                } else {
+                  //程序报错
+                  wx.showToast({
+                    title: "服务器异常，抢修中...",
+                    icon: "none",
+                  });
+                }
+              }
+            );
+          },
+          fail() {
+            // session_key 已经失效，需要重新执行登录流程
+            app.Q(
+              config.getPhoneNumber,
+              "post",
+              { encryptedData: e.detail.encryptedData, iv: e.detail.iv, session_key: app.globalData.session_key, openid: app.globalData.openid },
+              function (err, res) {
+                if (!err) {
+                  if (res.data.code == 200) {
+                    //更新登录状态
+                    app.globalData.loginStatus = true;
+                    app.globalData.name = res.data.user.name;
+                    app.globalData.phone = res.data.user.phone;
+                    app.globalData.head = res.userInfo.avatarUrl;
+
+                    that.onLoad();
+                    that.onShow();
+                  } else {
+                    wx.showToast({
+                      title: res.data.msg,
+                      icon: "none",
+                    });
+                  }
+                } else {
+                  //程序报错
+                  wx.showToast({
+                    title: "服务器异常，抢修中...",
+                    icon: "none",
+                  });
+                }
+              }
+            );
+          },
+        });
+      },
+    });
+  },
   onReady: function () {},
 
   /**
@@ -136,6 +213,28 @@ Page({
     this.setData({
       name: app.globalData.name,
       phone: app.globalData.phone,
+      head: app.globalData.head,
+    });
+    wx.getSetting({
+      success(res) {
+        if (!res.authSetting["scope.userInfo"]) {
+          wx.authorize({
+            scope: "scope.userInfo",
+            success() {
+              wx.getUserInfo({
+                success: function (res) {
+                  app.globalData.loginStatus = true;
+                  app.globalData.name = res.userInfo.nickName;
+                  app.globalData.head = res.userInfo.avatarUrl;
+
+                  this.onLoad();
+                  this.onShow();
+                },
+              });
+            },
+          });
+        }
+      },
     });
   },
 

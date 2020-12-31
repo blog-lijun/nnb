@@ -1,11 +1,15 @@
 /* pages/index/detail/detail.wxss */
-page{
+page {
   background-color: #eeeeee;
 }
-
-.production{
+.container {
+  background-color: #252d8b;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.production {
   padding-left: 21rpx;
-    background: #fff;
+  background: #fff;
 }
 .production > text {
   font-size: 40rpx;
@@ -16,17 +20,17 @@ page{
   color: red;
 }
 
-.production .oldPrice{
+.production .oldPrice {
   text-decoration: line-through;
   font-size: 25rpx;
   color: #aaa;
   margin-left: 20rpx;
 }
 
-.serve{
+.serve {
   width: 95%;
   margin: 0 auto;
-  background: #fff;
+  background: transparent;
   margin-top: 30rpx;
 }
 
@@ -62,9 +66,23 @@ page{
 .jsbl {
   width: 80%;
   margin: 30rpx auto;
-  border-radius: 1rpx solid rgb(255,185,51);
-  background-color: rgb(255,185,51);
   color: #fff;
+  background: linear-gradient(#ffa031, #e37f14);
   border-radius: 150rpx;
-  margin-bottom: 80rpx;
+}
+.form {
+  width: 354px;
+  height: 295px;
+  background-color: #3559de;
+  padding: 15px;
+  margin: 30px auto 0 auto;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+.formIn {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 15px;
+  width: 100%;
 }

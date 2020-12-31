@@ -32,7 +32,7 @@ Page({
         console.log(err,res);
         //获取验证码成功 给出提示，并且建立定时任务，修改页面样式
         if(!err && res.data.code == 200){
-          var time = 60;
+          var time = 120;
          that.data.inter = setInterval(function(){
                 //展示秒数
                 that.setData({

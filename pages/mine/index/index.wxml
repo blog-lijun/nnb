@@ -1,21 +1,27 @@
-<!--pages/mine/index/index.wxml-->
-<view class="page">
-    <image mode="widthFix" class="mine-background" src="../../images/mine-bg.jpg"/>
-    <view wx:if="{{ loginStatus }}" class="page__hd" style="padding:30rpx;">
-        <view class="page__title">账户名称：{{ name }}</view>
-        <view class="page__desc">手机号：{{ phone }}</view>
-    </view>
-    <view wx:if="{{ !loginStatus }}" >
-       <button  class="logo_btn"  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">立即登录</button> 
-    </view>
-    <view class="page__bd">
-      <view class="weui-cells">
-      </view>
-     
-    </view>
-
+<!-- pages/mine/index/index.wxml -->
+<view class="page-user">
+  <image mode="widthFix" class="mine-background" src="../../images/mine-bg.jpg" />
+  <view wx:if="{{ loginStatus }}" class="user-header">
     <view>
-      <button wx:if="{{ loginStatus }}" class="logout" bindtap="logout">退出登录</button>
+      <image src='../../images/head-img.png' class="head-img" />
     </view>
-
+    <view class="user-info">
+      <view class="page__title">账户名称：{{ name }}</view>
+      <view class="page__desc">手机号：{{ phone }}</view>
+    </view>
+  </view>
+  <view wx:if="{{ loginStatus }}">
+    <view class="page__bd">
+      <mp-cell title="意见反馈" hover link></mp-cell>
+    </view>
+    <view>
+      <button class="logout" bindtap="logout">退出登录</button>
+    </view>
+  </view>
+  <view wx:if="{{ !loginStatus }}">
+    <button class="" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">立即登录</button>
+    <!-- <button wx:if="{{ !loginStatus }}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+      授权登录
+    </button> -->
+  </view>
 </view>
