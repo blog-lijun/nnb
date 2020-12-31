@@ -21,7 +21,7 @@
       <input class="zixun" type="text" model:value="{{ name }}" placeholder="请输入您的称呼" />
       <input class="zixun" type="number" maxlength="11" model:value="{{ phone }}" placeholder="请输入您的手机号" />
       <view class="code">
-        <input class="zixun" type="number" maxlength="6" model:value="{{ code }}" placeholder="请输入验证码" style="width:66%;" />
+        <input class="zixun" type="number" maxlength="4" model:value="{{ code }}" placeholder="请输入验证码" style="width:66%;" />
         <text style="font-size:30rpx;color:blue;text-align:center;" bindtap="getCode">
           {{ codeText }}
         </text>

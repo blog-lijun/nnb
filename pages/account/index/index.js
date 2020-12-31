@@ -26,9 +26,9 @@ Page({
   
   },
   show: function(e){
-    console.log(e.target.dataset.id);
+    console.log(e.target.dataset);
     wx.navigateTo({
-      url: '/pages/account/show/show?id='+e.target.dataset.id ,
+      url: '/pages/account/show/show?id='+e.target.dataset.id + '&thirdplatformuserid='+e.target.dataset.thirdplatformuserid ,
     })
     this.setData({
       loginStatus:app.globalData.loginStatus,

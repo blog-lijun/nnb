@@ -45,7 +45,7 @@
               <text>{{item.rating.average}}</text>
             </view>
           </view>
-          <text style="color:blue;" data-id="{{item.id}}" bindtap="show">查账</text>
+          <text style="color:blue;" data-id="{{item.id}}" data-thirdPlatformUserId ="{{ item.thirdPlatformUserId }}" bindtap="show">查账</text>
         </view>
       </navigator>
     </block>
