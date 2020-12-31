@@ -100,7 +100,11 @@ Page({
               title: res.data.msg,
               icon: 'success'
             })
-            that.onReady();
+            that.setData({
+              name:'',
+              phone:'',
+              code: ''
+            });
           }else{
             wx.showToast({
               title: res.data.msg,

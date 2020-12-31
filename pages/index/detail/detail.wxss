@@ -71,7 +71,7 @@ page {
   border-radius: 150rpx;
 }
 .form {
-  width: 354px;
+  width: 90%;
   height: 295px;
   background-color: #3559de;
   padding: 15px;

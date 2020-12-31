@@ -2,7 +2,7 @@
  * 小程序配置文件
  */
 
-const host = "https://lijun.phplijun.cn";
+const host = "https://www.phplijun.cn";
 
 const config = {
   // 下面的地址配合云端 Server 工作
