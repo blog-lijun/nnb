@@ -178,8 +178,12 @@ view {
   display: flex;
   align-items: center;
   flex-direction: row;
-  padding: 30px;
+  padding: 20px;
+  height: 100px;
   border-bottom: 1px solid #f2f2f2;
+}
+.news-message {
+  background: transparent;
 }
 .news-img {
   width: calc(206px * 0.8);
@@ -187,7 +191,7 @@ view {
   margin-right: 15px;
 }
 .news-title {
-  font-size: 20px;
+  font-size: 18px;
   color: #333333;
 }
 .news-desc {

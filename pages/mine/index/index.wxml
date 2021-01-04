@@ -2,9 +2,7 @@
 <view class="page-user">
   <image mode="widthFix" class="mine-background" src="../../images/mine-bg.jpg" />
   <view wx:if="{{ loginStatus }}" class="user-header">
-    <view>
-      <image src='../../images/head-img.png' class="head-img" />
-    </view>
+    <image src='../../images/head-img.png' class="head-img" />
     <view class="user-info">
       <view class="page__title">账户名称：{{ name }}</view>
       <view class="page__desc">手机号：{{ phone }}</view>
