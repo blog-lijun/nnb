@@ -1,7 +1,8 @@
 /* pages/index/detail/detail.wxss */
 page {
-  background-color: #eeeeee;
   height: 100%;
+  background-color: #ffffff;
+
 }
 .container {
   padding: 20px 15px;
@@ -25,9 +26,9 @@ page {
 }
 
 .serve {
-  width: 95%;
+  width: 95vw;
   margin: 0 auto;
-  background: #fff;
+  /* background: #fff; */
   margin-top: 30rpx;
   padding-bottom: 15rpx;
 }
