@@ -107,6 +107,10 @@ view {
   display: flex;
   align-items: center;
   flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .weui-tabs-bar__title {
@@ -167,12 +171,9 @@ view {
   height: 38px;
   margin: 0 auto;
 }
-.tab-content {
-  height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
+
 .news {
+  position: relative;
   width: calc(100vw - 30px);
   display: flex;
   align-items: center;

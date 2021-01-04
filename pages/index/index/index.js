@@ -45,10 +45,7 @@ Page({
     //     url: '/pages/Login/login/login',
     //   })
     // }
-    wx.showLoading({
-      title: "页面加载中",
-      mask: true,
-    });
+
 
     //加载banner图;
     app.Q(config.getConfig, "post", { type: 1 }, function (err, res) {
@@ -100,7 +97,7 @@ Page({
           var tabs = res.data.data;
           that.setData({ tabs });
           // console.log(res.data.data);
-          wx.hideLoading();
+        
         } else {
           wx.showToast({
             title: res.data.msg,
