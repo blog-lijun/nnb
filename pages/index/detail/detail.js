@@ -31,24 +31,32 @@ Page({
     app.Q(config.code,'post',{phone:this.data.phone},function(err,res){
         console.log(err,res);
         //获取验证码成功 给出提示，并且建立定时任务，修改页面样式
-        if(!err && res.data.code == 200){
-          var time = 120;
-         that.data.inter = setInterval(function(){
-                //展示秒数
-                that.setData({
-                  codeText:time+'s',
-                });
-                if(time == 0){
-                  clearInterval(that.data.inter);
-                  setTimeout(function(){
-                    that.setData({
-                      codeText:'获取验证码',
-                    });
-                  },1000)
-                 
-                }
-                time--;
-          },1000);
+        if(!err){
+          if(res.data.code == 200){
+            var time = 120;
+            that.data.inter = setInterval(function(){
+                  //展示秒数
+                  that.setData({
+                    codeText:time+'s',
+                  });
+                  if(time == 0){
+                    clearInterval(that.data.inter);
+                    setTimeout(function(){
+                      that.setData({
+                        codeText:'获取验证码',
+                      });
+                    },1000)
+                  
+                  }
+                  time--;
+            },1000);
+          }else{
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none'
+            })
+          }
+          
         }else{ //获取验证码失败，给出提示 
            wx.showToast({
              title: '验证码获取失败，工程师正在抢修中...',

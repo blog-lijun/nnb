@@ -49,17 +49,17 @@ App({
     p_id: "",
   },
   Q(url, method, data, callback) {
-    wx.showLoading({
-      title: "页面加载中",
-      mask: true,
-    });
+    // wx.showLoading({
+    //   title: "页面加载中",
+    //   mask: true,
+    // });
     wx.request({
       url: url,
       method: method,
       data: data,
       success(res) {
         callback(null, res);
-        wx.hideLoading();
+        // wx.hideLoading();
       },
       fail(err) {
         console.log("远程请求失败，请求地址：".url, err);
