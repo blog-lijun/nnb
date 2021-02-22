@@ -1,0 +1,13 @@
+.about-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.about-content {
+  font-size: 14px;
+  padding: 5px 10px;
+  text-align: justify;
+  text-indent: 28px;
+}

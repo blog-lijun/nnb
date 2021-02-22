@@ -3,10 +3,13 @@
   <!-- 产品名称、价格说明 -->
   <view class="production">
     <view class="news-title">{{ info.name }}</view>
-    <view class="news-time" style="text-align:right">{{info.created_at}}</view>
+    <!-- <view class="news-time" style="text-align:right">{{info.created_at}}</view> -->
   </view>
   <!-- 服务内容 -->
-  <view class="serve">
-    <rich-text class="content" nodes="{{ info.content }}"></rich-text>
+  <view class="serve" wx:if="{{video.length != 0}}">
+    <video src="{{video}}" autoplay="{{true}}"></video>
+  </view>
+  <view class="serve" wx:else>
+    <rich-text class="content" nodes="{{info.content}}"></rich-text>
   </view>
 </view>

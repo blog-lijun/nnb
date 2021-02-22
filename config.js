@@ -3,7 +3,7 @@
  */
 
 const host = "https://www.phplijun.cn";
-
+// const host = "https://lijun.phplijun.cn";
 const config = {
   // 下面的地址配合云端 Server 工作
   host,

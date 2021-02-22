@@ -23,3 +23,12 @@
     </button> -->
   </view>
 </view>
+<view>
+  <mp-cells>
+    <mp-cell title="关于我们" data-url="/pages/mine/about/index" bindtap='toAbout'></mp-cell>
+    <!-- <mp-cell title="在线咨询"  link hover></mp-cell> -->
+    <mp-cell title="联系我们"  bindtap='call'>
+      <view slot="footer">400-627-8899</view>
+    </mp-cell>
+  </mp-cells>
+</view>

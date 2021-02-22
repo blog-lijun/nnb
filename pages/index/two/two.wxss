@@ -1,51 +1,86 @@
 @import '../../common/common.wxss';
 
-page{
-    background-color: rgb(246,246,246);
-    height: 100%;
+page {
+  background-color: rgb(246, 246, 246);
+  height: 100%;
 }
 
 .vtabs-content-item {
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 20px;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+.product{
+    margin-left: 3px;
+}
+.product-title{
+    padding:10px 0 10px 15px;
+    font-size: 15px;
+    color: #333333;
 }
 .production {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  padding-left: 15px;
 }
 .price {
-    font-size: 25rpx;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.price button {
-    font-size: 25rpx;
-    width: 140rpx;
-    border-radius: 177rpx;
-    border: 1rpx solid rgb(0,157,255);
-    background-color: rgb(0,157,255);
-    color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .production .pname {
-    width: 50%;
-    display: grid;
-    align-items: center;
-    padding: 15rpx;
+  width: 100%;
+  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid #999999;
 }
-
+.product .production:last-child .pname {
+  border: none;
+}
+.pname-title {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 10px;
+    
+}
+.pname-tip {
+  color: #999999;
+  font-size: 12px;
+  text-overflow: -o-ellipsis-lastlin;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
 .priceNow {
-    color:red;
-    display: block;
+  color: red;
+  display: block;
 }
 
 .oldPrice {
-    color: #aaa;
-    text-decoration: line-through;
-    font-size: 21rpx;
-    display: block;
+  color: #999999;
+  text-decoration: line-through;
+  font-size: 12px;
+  display: block;
+  margin: 0 10px;
+}
+
+.weui-vtabs-bar__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.weui-vtabs-bar__item {
+  flex: 1;
+  height: auto;
+}
+.tab-active {
+  border-right: 5px solid rgb(0, 157, 255);
 }

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "首页",
+  "navigationBarTitleText": "牛牛帮",
   "enablePullDownRefresh": true,
   "usingComponents": {
     "mp-tabs": "../../components/tabs/index"

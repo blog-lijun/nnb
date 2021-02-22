@@ -1,5 +1,5 @@
 // pages/index/detail/detail.js
-const config = require("../../../config");
+const config = require('../../../config');
 const app = getApp();
 
 Page({
@@ -7,12 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    info: "",
-    phone: "",
-    code: "",
-    codeText: "获取验证码",
-    inter: "",
+    info: '',
+    phone: '',
+    code: '',
+    codeText: '获取验证码',
+    inter: '',
     id: 1, //咨询产品id;
+    video: '',
   },
 
   /**
@@ -23,28 +24,39 @@ Page({
     this.setData({
       id: options.id,
     });
+
+    var pattern = new RegExp('<(\\S*?)[^>]*>.*?|<.*? />');
+    let del = new RegExp('src="(\\S*)"');
+   
     //加载对应产品的图片信息;
     //加载banner图;
-    app.Q(config.getZx, "post", { id: options.id }, function (err, res) {
+    app.Q(config.getZx, 'post', { id: options.id }, function (err, res) {
       console.log(res);
       if (!err) {
         if (res.data.code == 200) {
           that.setData({
             info: res.data.data[0],
           });
+          console.log();
+          if (pattern.test(res.data.data[0].content)) {
+            that.setData({
+              video: res.data.data[0].content.match(del)[1],
+            });
+          }
+          console.log(res.data.data[0].content.match(del)[1]);
           wx.setNavigationBarTitle({
             title: res.data.data[0].name,
           });
         } else {
           wx.showToast({
             title: res.data.msg,
-            icon: "none",
+            icon: 'none',
           });
         }
       } else {
         wx.showToast({
-          title: "banner加载失败！",
-          icon: "none",
+          title: 'banner加载失败！',
+          icon: 'none',
         });
       }
     });

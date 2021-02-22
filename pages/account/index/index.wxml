@@ -73,3 +73,6 @@
     </view>
     
 </view>
+<view class="error-tips">
+  <view>*除河南外其他地区暂未开通此功能</view>
+</view>

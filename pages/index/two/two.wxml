@@ -1,30 +1,18 @@
-<mp-vtabs vtabs="{{vtabs}}" activeTab="{{activeTab}}" bindtabclick="onTabCLick" bindchange="onChange" class="test">
+<mp-vtabs vtabs="{{vtabs}}" activeTab="{{activeTab}}" bindtabclick="onTabCLick" bindchange="onChange" class="test" activeClass='tab-active'>
   <block wx:for="{{vtabs}}" wx:key="title">
     <mp-vtabs-content tabIndex="{{index}}">
-      <view style="margin:0 15px">
-        <!-- banner 图 -->
-        <image src="{{ item.banner }}" style="width:100%;" mode="widthFix" />
+      <view class="product">
         <!-- 工商服务产品明细 -->
+        <view class="product-title">{{item.title}}</view>
         <view class="production" wx:key="this" wx:for="{{ item.data }}" wx:for-item="x">
-          <!-- 产品主图 -->
-          <view style="width:50%;">
-            <image src="{{ x.pic }}" style="width:100%;" mode="widthFix" />
-          </view>
           <!-- 文字价格说明 -->
-          <view class="pname">
-            <text>{{ x.name }}</text>
+          <view class="pname" bindtap='toDetail' data-id="{{x.id}}">
+            <text class="pname-title">{{ x.name }}</text>
+            <text class="pname-tip">{{x.remark}}</text>
+            <!-- 现价和原价 -->
             <view class="price">
-              <!-- 现价和原价 -->
-              <view>
-                <text class="priceNow">{{ x.price }}</text>
-                <text class="oldPrice">{{ x.old_price }}</text>
-              </view>
-              <!-- 查看按钮 -->
-              <view>
-                <navigator url="/pages/index/detail/detail?id={{x.id}}">
-                  <button>去看看</button>
-                </navigator>
-              </view>
+              <text class="priceNow">{{ x.price }}</text>
+              <text class="oldPrice">{{ x.old_price }}</text>
             </view>
           </view>
         </view>

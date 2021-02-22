@@ -28,7 +28,7 @@ Page({
     indicatorDots: true,
     vertical: true,
     autoplay: true,
-    interval: 2000,
+    interval: 4500,
     duration: 500,
     tabs: [],
     hots: [],
@@ -53,7 +53,7 @@ Page({
       if (!err) {
         if (res.data.code == 200) {
           that.setData({
-            background: res.data.data[0],
+            background: res.data.data,
           });
         } else {
           wx.showToast({
@@ -130,7 +130,7 @@ Page({
         if (!err) {
           if (res.data.code == 200) {
             that.setData({
-              background: res.data.data[0],
+              background: res.data.data,
             });
             console.log(that.data.background);
           } else {
@@ -199,5 +199,9 @@ Page({
     //  tabs = tabs.map(item => ({title: item.title,data:[1,3,4]}))
     // console.log(tabs);
     // this.setData({tabs})
+  },
+  onPullDownRefresh() {
+    wx.stopPullDownRefresh();
+  
   },
 });

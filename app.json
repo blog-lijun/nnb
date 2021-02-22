@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index/index",
     "pages/mine/index/index",
+    "pages/mine/about/index",
     "pages/index/detail/detail",
     "pages/index/two/two",
     "pages/account/index/index",
@@ -12,6 +13,7 @@
     "pages/Login/register/register",
     "pages/Login/user/user",
     "pages/account/show/show"
+
   ],
   "window": {
     "backgroundColor": "#ffffff",

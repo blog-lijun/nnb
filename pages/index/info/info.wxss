@@ -10,27 +10,26 @@ page {
   background-color: #ffffff;
 }
 .news-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 .news-time {
   color: #aaaaaa;
 }
 .production {
-  padding: 33rpx;
   background: #fff;
 }
 .production > text {
-  font-size: 40rpx;
   font-weight: 550;
 }
 
 .serve {
-  width: 95vw;
+  width: 100%;
   margin: 0 auto;
   /* background: #fff; */
   margin-top: 30rpx;
   padding-bottom: 15rpx;
+  font-size: 16px;
 }
 .serve .content {
   width: 94%;
@@ -41,7 +40,9 @@ page {
   background: #ffffff;
   padding-top: 30rpx;
 }
-
+.serve .content  img{
+  width: 100%;
+}
 .serve .title {
   font-size: 35rpx;
   font-weight: 550;
@@ -79,4 +80,8 @@ page {
   color: #fff;
   border-radius: 150rpx;
   margin-bottom: 80rpx;
+}
+
+video{
+  width:100%
 }
