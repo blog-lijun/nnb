@@ -14,6 +14,7 @@ Page({
     inter: '',
     id: 1, //咨询产品id;
     video: '',
+    inner:''
   },
 
   /**
@@ -25,9 +26,9 @@ Page({
       id: options.id,
     });
 
-    var pattern = new RegExp('<(\\S*?)[^>]*>.*?|<.*? />');
+    var pattern = new RegExp('<video(\\S*?)[^>]*>.*?|<.*? /video>');
     let del = new RegExp('src="(\\S*)"');
-   
+    let a='<video>123</video>'
     //加载对应产品的图片信息;
     //加载banner图;
     app.Q(config.getZx, 'post', { id: options.id }, function (err, res) {
@@ -43,7 +44,7 @@ Page({
               video: res.data.data[0].content.match(del)[1],
             });
           }
-          console.log(res.data.data[0].content.match(del)[1]);
+          console.log(pattern.test(a));
           wx.setNavigationBarTitle({
             title: res.data.data[0].name,
           });
