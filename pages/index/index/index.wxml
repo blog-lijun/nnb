@@ -46,11 +46,13 @@
     <!-- tabs切换 -->
     <mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color='#2891fe' tab-active-text-color='#2891fe'>
       <block wx:for="{{tabs}}" wx:key="title">
-        <view class="tab-content" wx:for="{{ item.data }}" wx:key="this" wx:for-item="x" slot="tab-content-{{index}}">
-          <navigator class="news" url="/pages/index/info/info?id={{ x.id }}">
-            <view class="news-message">
-              <view class="news-title">{{ x.name}}</view>
-              <view class="news-desc">{{ x.created_at }}</view>
+        <view class="" slot="tab-content-{{index}}">
+          <navigator class=" tab-content" wx:for="{{ item.data }}" wx:key="this" wx:for-item="x" url="/pages/index/info/info?id={{ x.id }}">
+            <view class="news">
+              <view class="news-message">
+                <view class="news-title">{{ x.name}}</view>
+                <view class="news-desc">{{ x.created_at }}</view>
+              </view>
             </view>
           </navigator>
         </view>

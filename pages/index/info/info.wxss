@@ -32,16 +32,15 @@ page {
   font-size: 16px;
 }
 .serve .content {
-  width: 94%;
   font-size: 13px;
   display: flex;
-  margin: 39rpx auto;
+  margin: 15px auto;
   color: #222;
   background: #ffffff;
-  padding-top: 30rpx;
+  text-align: justify;
 }
-.serve .content  img{
-  width: 100%;
+img{
+  width: 100px;
 }
 .serve .title {
   font-size: 35rpx;
