@@ -8,6 +8,12 @@
       <view class="page__desc">手机号：{{ phone }}</view>
     </view>
   </view>
+  <view wx:if="{{ !loginStatus }}" class="user-header unLogin">
+    <view class="user-info ">
+      <image src='../../images/head-img.png' class="head-img" />
+      <view class="page__desc">尚未登录</view>
+    </view>
+  </view>
   <view wx:if="{{ loginStatus }}">
     <!-- <view class="page__bd">
       <mp-cell title="意见反馈" hover link></mp-cell>
@@ -17,7 +23,9 @@
     </view>
   </view>
   <view wx:if="{{ !loginStatus }}">
-    <button class="" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">立即登录</button>
+    <button class="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      立即登录
+    </button>
     <!-- <button wx:if="{{ !loginStatus }}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
       授权登录
     </button> -->
@@ -27,8 +35,14 @@
   <mp-cells>
     <mp-cell title="关于我们" data-url="/pages/mine/about/index" bindtap='toAbout'></mp-cell>
     <!-- <mp-cell title="在线咨询"  link hover></mp-cell> -->
-    <mp-cell title="联系我们"  bindtap='call'>
+    <mp-cell title="联系我们" bindtap='call'>
       <view slot="footer">400-627-8899</view>
     </mp-cell>
   </mp-cells>
+</view>
+<view class="qrCode">
+  <image class="img" src="../../images/qrCode.jpeg" />
+</view>
+<view class="fixed-phone" bindtap='call'>
+  <image  src="../../images/phone.png"/>
 </view>

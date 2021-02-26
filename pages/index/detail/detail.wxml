@@ -1,22 +1,11 @@
 <!-- pages/index/detail/detail.wxml -->
 <view class="container">
-  <!-- <view>
-    <image src="{{ production.pic }}" mode="widthFix" style="width:100%;" />
-  </view> -->
-  <!-- 产品名称、价格说明 -->
-  <!-- <view class="production">
-    <text>{{ production.name }}</text>
-    <view>
-      <text class="price">{{ production.price }}</text>
-      <text class="oldPrice">{{ production.old_price }}</text>
-    </view>
-  </view> -->
   <!-- 服务内容 -->
   <view class="serve">
-    <image src="{{ production.content }}" mode="widthFix" style="width:100%;" />
+    <rich-text class="content" nodes='{{production.content}}'></rich-text>
   </view>
   <!-- 咨询表单 -->
-  <view class="form">
+  <!-- <view class="form">
     <view class="formIn">
       <input class="zixun" type="text" model:value="{{ name }}" placeholder="请输入您的称呼" />
       <input class="zixun" type="number" maxlength="11" model:value="{{ phone }}" placeholder="请输入您的手机号" />
@@ -28,5 +17,8 @@
       </view>
       <button class="jsbl" bindtap="zx_insert">急速办理</button>
     </view>
-  </view>
+  </view> -->
+</view>
+<view class="fixed-phone" bindtap='call'>
+  <image src="../../images/phone.png" />
 </view>

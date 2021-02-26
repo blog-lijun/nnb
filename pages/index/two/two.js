@@ -12,9 +12,7 @@ Page({
     // const vtabs = titles.map(item => ({title: item}))
     // this.setData({vtabs})
     var that = this;
-    // 财税学堂加载
     app.Q(config.productions, 'post', { type: 4, status: 1 }, function (err, res) {
-      console.log(res);
       if (!err) {
         if (res.data.code == 200) {
           var vtabs = res.data.data;
@@ -27,13 +25,17 @@ Page({
         }
       } else {
         wx.showToast({
-          title: 'banner加载失败！',
+          title: '加载失败！',
           icon: 'none',
         });
       }
     });
   },
-
+  call: function () {
+    wx.makePhoneCall({
+      phoneNumber: '400-627-8899', //仅为示例，并非真实的电话号码
+    });
+  },
   onTabCLick(e) {
     const index = e.detail.index;
     console.log('tabClick', index);
@@ -47,7 +49,7 @@ Page({
     console.log(e);
 
     wx.navigateTo({
-      url: `/pages/index/detail/detail?id=${e.target.dataset.id}`,
+      url: `/pages/index/detail/detail?id=${e.currentTarget.id}`,
     });
   },
 });

@@ -46,7 +46,7 @@
     <!-- tabs切换 -->
     <mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color='#2891fe' tab-active-text-color='#2891fe'>
       <block wx:for="{{tabs}}" wx:key="title">
-        <view class="" slot="tab-content-{{index}}">
+        <view class="news-body" slot="tab-content-{{index}}">
           <navigator class=" tab-content" wx:for="{{ item.data }}" wx:key="this" wx:for-item="x" url="/pages/index/info/info?id={{ x.id }}">
             <view class="news">
               <view class="news-message">
@@ -59,4 +59,7 @@
       </block>
     </mp-tabs>
   </view>
+</view>
+<view class="fixed-phone" bindtap='call'>
+  <image src="../../images/phone.png" />
 </view>

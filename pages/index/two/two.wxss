@@ -12,13 +12,13 @@ page {
   border-bottom: 1px solid #ccc;
   padding-bottom: 20px;
 }
-.product{
-    margin-left: 3px;
+.product {
+  margin-left: 3px;
 }
-.product-title{
-    padding:10px 0 10px 15px;
-    font-size: 15px;
-    color: #333333;
+.product-title {
+  padding: 10px 0 10px 15px;
+  font-size: 15px;
+  color: #333333;
 }
 .production {
   display: flex;
@@ -44,10 +44,9 @@ page {
   border: none;
 }
 .pname-title {
-    font-size: 18px;
-    color: #333333;
-    margin-bottom: 10px;
-    
+  font-size: 18px;
+  color: #333333;
+  margin-bottom: 10px;
 }
 .pname-tip {
   color: #999999;
@@ -82,5 +81,6 @@ page {
   height: auto;
 }
 .tab-active {
-  border-right: 5px solid rgb(0, 157, 255);
+  background: rgb(0, 157, 255);
+  color: #ffffff;
 }

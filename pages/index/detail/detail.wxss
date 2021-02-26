@@ -1,11 +1,10 @@
 /* pages/index/detail/detail.wxss */
 page {
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 .container {
-  background-color: #252d8b;
+  background-color: #ffffff;
   padding-bottom: 30px;
-  padding-top: 30px;
 }
 .production {
   padding-left: 21rpx;
@@ -31,7 +30,6 @@ page {
   width: 95%;
   margin: 0 auto;
   background: transparent;
-  margin-top: 30rpx;
 }
 
 .serve .title {

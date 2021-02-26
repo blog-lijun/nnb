@@ -40,3 +40,28 @@
 .user-info {
   color: #ffffff;
 }
+.unLogin {
+  padding: 15px 0;
+}
+.unLogin .user-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.unLogin .head-img {
+  margin: 0;
+}
+
+.qrCode {
+  position: fixed;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.qrCode .img {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}

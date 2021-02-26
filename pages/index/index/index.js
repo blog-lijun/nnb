@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
-const config = require("../../../config");
-const util = require("../../../utils/util.js");
+const config = require('../../../config');
+const util = require('../../../utils/util.js');
 const app = getApp();
 
 Page({
@@ -24,7 +24,7 @@ Page({
   //   };
   // },
   data: {
-    background: ["http://qiniu.phplijun.cn/banner.png", "111", "http://qiniu.phplijun.cn/banner.png"],
+    background: ['http://qiniu.phplijun.cn/banner.png', '111', 'http://qiniu.phplijun.cn/banner.png'],
     indicatorDots: true,
     vertical: true,
     autoplay: true,
@@ -46,9 +46,8 @@ Page({
     //   })
     // }
 
-
     //加载banner图;
-    app.Q(config.getConfig, "post", { type: 1 }, function (err, res) {
+    app.Q(config.getConfig, 'post', { type: 1 }, function (err, res) {
       //console.log(res);
       if (!err) {
         if (res.data.code == 200) {
@@ -58,18 +57,18 @@ Page({
         } else {
           wx.showToast({
             title: res.data.msg,
-            icon: "none",
+            icon: 'none',
           });
         }
       } else {
         wx.showToast({
-          title: "banner加载失败！",
-          icon: "none",
+          title: 'banner加载失败！',
+          icon: 'none',
         });
       }
     });
     // 加载热门服务
-    app.Q(config.getConfigHot, "post", { type: 4, status: 1, is_hot: 1 }, function (err, res) {
+    app.Q(config.getConfigHot, 'post', { type: 4, status: 1, is_hot: 1 }, function (err, res) {
       //console.log(res);
       if (!err) {
         if (res.data.code == 200) {
@@ -79,35 +78,34 @@ Page({
         } else {
           wx.showToast({
             title: res.data.msg,
-            icon: "none",
+            icon: 'none',
           });
         }
       } else {
         wx.showToast({
-          title: "banner加载失败！",
-          icon: "none",
+          title: 'banner加载失败！',
+          icon: 'none',
         });
       }
     });
     // 财税学堂加载
-    app.Q(config.csxt, "post", { status: 1 }, function (err, res) {
+    app.Q(config.csxt, 'post', { status: 1 }, function (err, res) {
       // console.log(res);
       if (!err) {
         if (res.data.code == 200) {
           var tabs = res.data.data;
           that.setData({ tabs });
           // console.log(res.data.data);
-        
         } else {
           wx.showToast({
             title: res.data.msg,
-            icon: "none",
+            icon: 'none',
           });
         }
       } else {
         wx.showToast({
-          title: "banner加载失败！",
-          icon: "none",
+          title: 'banner加载失败！',
+          icon: 'none',
         });
       }
     });
@@ -125,7 +123,7 @@ Page({
 
     if (!that.background) {
       //加载banner图;
-      app.Q(config.getConfig, "post", { type: 1 }, function (err, res) {
+      app.Q(config.getConfig, 'post', { type: 1 }, function (err, res) {
         console.log(res);
         if (!err) {
           if (res.data.code == 200) {
@@ -136,20 +134,20 @@ Page({
           } else {
             wx.showToast({
               title: res.data.msg,
-              icon: "none",
+              icon: 'none',
             });
           }
         } else {
           wx.showToast({
-            title: "banner加载失败！",
-            icon: "none",
+            title: 'banner加载失败！',
+            icon: 'none',
           });
         }
       });
     }
     if (!that.hots) {
       // 加载热门服务
-      app.Q(config.getConfigHot, "post", { type: 4, status: 1, is_hot: 1 }, function (err, res) {
+      app.Q(config.getConfigHot, 'post', { type: 4, status: 1, is_hot: 1 }, function (err, res) {
         console.log(res);
         if (!err) {
           if (res.data.code == 200) {
@@ -159,20 +157,20 @@ Page({
           } else {
             wx.showToast({
               title: res.data.msg,
-              icon: "none",
+              icon: 'none',
             });
           }
         } else {
           wx.showToast({
-            title: "banner加载失败！",
-            icon: "none",
+            title: 'banner加载失败！',
+            icon: 'none',
           });
         }
       });
     }
     if (!that.tabs) {
       // 财税学堂加载
-      app.Q(config.csxt, "post", { status: 1 }, function (err, res) {
+      app.Q(config.csxt, 'post', { status: 1 }, function (err, res) {
         // console.log(res);
         if (!err) {
           if (res.data.code == 200) {
@@ -182,13 +180,13 @@ Page({
           } else {
             wx.showToast({
               title: res.data.msg,
-              icon: "none",
+              icon: 'none',
             });
           }
         } else {
           wx.showToast({
-            title: "banner加载失败！",
-            icon: "none",
+            title: 'banner加载失败！',
+            icon: 'none',
           });
         }
       });
@@ -202,6 +200,10 @@ Page({
   },
   onPullDownRefresh() {
     wx.stopPullDownRefresh();
-  
+  },
+  call: function () {
+    wx.makePhoneCall({
+      phoneNumber: '400-627-8899', //仅为示例，并非真实的电话号码
+    });
   },
 });

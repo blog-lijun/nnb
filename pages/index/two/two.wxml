@@ -6,7 +6,7 @@
         <view class="product-title">{{item.title}}</view>
         <view class="production" wx:key="this" wx:for="{{ item.data }}" wx:for-item="x">
           <!-- 文字价格说明 -->
-          <view class="pname" bindtap='toDetail' data-id="{{x.id}}">
+          <view class="pname" id="{{x.id}}" bindtap='toDetail'>
             <text class="pname-title">{{ x.name }}</text>
             <text class="pname-tip">{{x.remark}}</text>
             <!-- 现价和原价 -->
@@ -20,3 +20,6 @@
     </mp-vtabs-content>
   </block>
 </mp-vtabs>
+<view class="fixed-phone" bindtap='call'>
+  <image src="../../images/phone.png" />
+</view>

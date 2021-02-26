@@ -38,7 +38,11 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {},
-
+  call:function(){
+    wx.makePhoneCall({
+      phoneNumber: '400-627-8899' //仅为示例，并非真实的电话号码
+    })
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */

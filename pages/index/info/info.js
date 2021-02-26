@@ -14,7 +14,7 @@ Page({
     inter: '',
     id: 1, //咨询产品id;
     video: '',
-    inner:''
+    inner: '',
   },
 
   /**
@@ -28,17 +28,20 @@ Page({
 
     var pattern = new RegExp('<video(\\S*?)[^>]*>.*?|<.*? /video>');
     let del = new RegExp('src="(\\S*)"');
-    let a='<video>123</video>'
+    let a = '<video>123</video>';
     //加载对应产品的图片信息;
     //加载banner图;
     app.Q(config.getZx, 'post', { id: options.id }, function (err, res) {
-      console.log(res);
+
       if (!err) {
         if (res.data.code == 200) {
+          res.data.data[0].content = res.data.data[0].content.replace(/style='max-width:100%;'/g, "style='width:100%;display:block' ").replace(/style="height:auto;"/g,"");
+          console.log(res.data.data[0].content);
+
           that.setData({
             info: res.data.data[0],
           });
-          console.log();
+
           if (pattern.test(res.data.data[0].content)) {
             that.setData({
               video: res.data.data[0].content.match(del)[1],
@@ -62,7 +65,11 @@ Page({
       }
     });
   },
-
+  call:function(){
+    wx.makePhoneCall({
+      phoneNumber: '400-627-8899' //仅为示例，并非真实的电话号码
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
